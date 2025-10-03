@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Flow Analysis</title>
+   <link rel="stylesheet" href="style.css">
+   </head>
+<body>
+    <div class ="container"
+        <h1>Advanced Order Flow Analysis in Forex</h1>
+        
+        <div class="module-nav">
+            <button class="nav-btn active">Introduction</button>
+            <button class="nav-btn">Fundamentals</button>
+            <button class="nav-btn">Order Book</button>
+            <button class="nav-btn" >Footprint Charts</button>
+            <button ><Volume class="nav-btn" >Profile</button>
+            <button class="nav-btn" >Liquidity Analysis</button>
+            <button class="nav-btn" >Trading Strategies</button>
+            <button class="nav-btn" >Advanced Concepts</button>
+        </div>
+
+        <!-- INTRODUCTION SECTION -->
+        <div id="intro" class="content-section active">
+            <h2>What is Order Flow?</h2>
+            <p>Order flow is the study of <strong>buying and selling activity</strong> at specific price levels in real-time. Unlike traditional technical analysis that focuses on historical price patterns, order flow analysis examines the actual transactions, orders, and liquidity that drive price movement.</p>
+            
+            <div class="concept-box">
+                <h3>Core Principle</h3>
+                <p>Price moves because of <strong>order imbalances</strong>. When aggressive buyers overwhelm sellers at a price level, price moves up. When aggressive sellers overwhelm buyers, price moves down. Order flow helps you see these imbalances BEFORE they show up on your price chart.</p>
+            </div>
+            
+            <div class="key-point">
+                <strong>Key Insight:</strong> Traditional charts show you WHERE price has been. Order flow shows you WHY price moved and WHERE it's likely to go next.
+            </div>
+            
+            <h3>Why Order Flow Matters in Forex</h3>
+            <ul>
+                <li><strong>Early Detection:</strong> See institutional activity before major moves</li>
+                <li><strong>Better Entries/Exits:</strong> Enter at prices where institutions are trading</li>
+                <li><strong>Understanding Context:</strong> Know if a breakout is real or false</li>
+                <li><strong>Risk Management:</strong> Identify where large players have placed stops</li>
+                <li><strong>Market Structure:</strong> Understand support/resistance from actual trading activity</li>
+            </ul>
+            
+            <h3>Three Pillars of Order Flow</h3>
+            <ol>
+                <li><strong>Order Book (Depth of Market):</strong> Shows pending buy/sell orders at different price levels</li>
+                <li><strong>Time & Sales (Tape):</strong> Real-time executed trades showing aggressor side</li>
+                <li><strong>Volume Profile:</strong> Distribution of volume traded at each price level</li>
+            </ol>
+        </div>
+
+        <!-- FUNDAMENTALS SECTION -->
+        <div id="fundamentals" class="content-section">
+            <h2>Order Flow Fundamentals</h2>
+            
+            <h3>Market vs Limit Orders</h3>
+            <div class="example-box">
+                <h4>Market Orders (Aggressive)</h4>
+                <p><strong>Definition:</strong> Orders that execute immediately at the best available price.</p>
+                <ul>
+                    <li>Market Buy = Takes liquidity from Ask side (aggressive buyers)</li>
+                    <li>Market Sell = Takes liquidity from Bid side (aggressive sellers)</li>
+                    <li>These create immediate price movement</li>
+                    <li>Show urgency and conviction</li>
+                </ul>
+                
+                <h4>Limit Orders (Passive)</h4>
+                <p><strong>Definition:</strong> Orders placed at specific prices waiting to be filled.</p>
+                <ul>
+                    <li>Buy Limits below current price = Passive buyers providing liquidity</li>
+                    <li>Sell Limits above current price = Passive sellers providing liquidity</li>
+                    <li>Create support/resistance levels</li>
+                    <li>Often represent institutional positioning</li>
+                </ul>
+            </div>
+            
+            <h3>The Order Flow Cycle</h3>
+            <div class="visual-demo">
+                <h4>How Institutional Orders Move Markets</h4>
+                <ol>
+                    <li><strong>Accumulation:</strong> Institution places large buy limit orders below current price → Creates support</li>
+                    <li><strong>Absorption:</strong> Institution absorbs selling pressure without price moving down → Shows strength</li>
+                    <li><strong>Initiation:</strong> Institution starts aggressive buying (market orders) → Price begins to rise</li>
+                    <li><strong>Continuation:</strong> Retail follows, institution may provide liquidity → Price continues up</li>
+                    <li><strong>Distribution:</strong> Institution places sell limits into buying → Exit begins</li>
+                    <li><strong>Reversal:</strong> Institution switches to aggressive selling → Price reverses</li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ Critical Understanding</h4>
+                <p><strong>Volume alone is meaningless!</strong> What matters is:</p>
+                <ul>
+                    <li>WHO is trading (aggressor vs passive)</li>
+                    <li>WHERE they're trading (price level)</li>
+                    <li>WHAT happens after (absorption vs continuation)</li>
+                </ul>
+                <p>Example: High volume at resistance could mean selling pressure OR buying absorption. Context is everything!</p>
+            </div>
+            
+            <h3>Key Order Flow Concepts</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Description</th>
+                        <th>Trading Implication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Delta</strong></td>
+                        <td>Difference between buying volume and selling volume</td>
+                        <td>Positive delta = more buying pressure; Negative delta = more selling pressure</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cumulative Delta</strong></td>
+                        <td>Running total of delta over time</td>
+                        <td>Shows trend strength and potential divergences</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Order Book Imbalance</strong></td>
+                        <td>Ratio of bid vs ask liquidity</td>
+                        <td>Predicts short-term price direction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Absorption</strong></td>
+                        <td>Large orders absorbing aggressive flow without price moving</td>
+                        <td>Indicates institutional accumulation/distribution</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exhaustion</strong></td>
+                        <td>High volume with no follow-through</td>
+                        <td>Potential reversal point</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iceberg Orders</strong></td>
+                        <td>Hidden large orders that replenish when filled</td>
+                        <td>Creates strong support/resistance</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ORDER BOOK SECTION -->
+        <div id="orderbook" class="content-section">
+            <h2>Understanding the Order Book (DOM)</h2>
+            
+            <div class="concept-box">
+                <h3>What is the Order Book?</h3>
+                <p>The order book (Depth of Market) displays all pending limit orders at various price levels. It shows you the <strong>liquidity landscape</strong> - where buyers and sellers are waiting to trade.</p>
+            </div>
+            
+            <h3>Visual Representation of Order Book</h3>
+            <div class="visual-demo">
+                <h4>Sample EUR/USD Order Book</h4>
+                <div class="orderbook">
+                    <div class="asks">
+                        <h4 style="color: #ff4444; text-align: center;">ASK (Sellers)</h4>
+                        <div class="order-level">
+                            <span class="price">1.0853</span>
+                            <span class="volume">2,500 lots</span>
+                        </div>
+                        <div class="order-level">
+                            <span class="price">1.0852</span>
+                            <span class="volume">5,800 lots</span>
+                        </div>
+                        <div class="order-level">
+                            <span class="price">1.0851</span>
+                            <span class="volume">12,400 lots</span>
+                        </div>
+                        <div class="order-level">
+                            <span class="price">1.0850</span>
+                            <span class="volume">8,900 lots</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bids">
+                        <h4 style="color: #44ff44; text-align: center;">BID (Buyers)</h4>
+                        <div class="order-level">
+                            <span class="price">1.0849</span>
+                            <span class="volume">6,300 lots</span>
+                        </div>
+                        <div class="order-level">
+                            <span class="price">1.0848</span>
+                            <span class="volume">15,200 lots</span>
+                        </div>
+                        <div class="order-level">
+                            <span class="price">1.0847</span>
+                            <span class="volume">9,100 lots</span>
+                        </div>
+                        <div class="order-level">
+                            <span class="price">1.0846</span>
+                            <span class="volume">4,500 lots</span>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 20px;"><strong>Analysis:</strong> Notice the large bid at 1.0848 (15,200 lots). This is likely institutional support. If price moves down to 1.0848 and holds, it's a potential long entry.</p>
+            </div>
+            
+            <h3>Reading Order Book Imbalances</h3>
+            <div class="example-box">
+                <h4>Bullish Imbalance Example</h4>
+                <p><strong>Scenario:</strong> Current price at 1.0850</p>
+                <ul>
+                    <li>Total Ask liquidity (above): 29,600 lots</li>
+                    <li>Total Bid liquidity (below): 35,100 lots</li>
+                    <li><strong>Imbalance Ratio:</strong> 1.19:1 in favor of bids</li>
+                </ul>
+                <p><strong>Interpretation:</strong> More passive buyers than sellers suggests underlying bullish pressure. If aggressive buying starts, asks will get absorbed quickly.</p>
+                
+                <h4>What to Watch For:</h4>
+                <ul>
+                    <li><strong>Order Stacking:</strong> Large orders appearing at same level repeatedly (icebergs)</li>
+                    <li><strong>Order Pulls:</strong> Large orders disappearing before being hit (spoofing or genuine change)</li>
+                    <li><strong>Order Replenishment:</strong> Orders being filled and immediately replaced (strong level)</li>
+                    <li><strong>Bid/Ask Spread Widening:</strong> Uncertainty or low liquidity</li>
+                </ul>
+            </div>
+            
+            <h3>Order Book Patterns</h3>
+            <div class="strategy-card">
+                <h4>1. The Wall Pattern</h4>
+                <p><strong>Setup:</strong> Large order significantly bigger than surrounding levels</p>
+                <p><strong>Example:</strong> 50,000 lot buy order at 1.0845 vs 5,000-10,000 lots at other levels</p>
+                <p><strong>Trading Strategy:</strong></p>
+                <ul>
+                    <li>Watch for price approaching the wall</li>
+                    <li>If wall holds (orders get absorbed), go long</li>
+                    <li>If wall gets pulled before hit, expect breakdown</li>
+                    <li>Stop below the wall level</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>2. The Ladder Pattern</h4>
+                <p><strong>Setup:</strong> Increasing order sizes as price moves in one direction</p>
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>1.0848: 10,000 lots</li>
+                    <li>1.0847: 15,000 lots</li>
+                    <li>1.0846: 25,000 lots</li>
+                    <li>1.0845: 40,000 lots</li>
+                </ul>
+                <p><strong>Interpretation:</strong> Institutional accumulation zone. Strong support expected.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>3. The Vacuum Pattern</h4>
+                <p><strong>Setup:</strong> Very thin liquidity on one side of the market</p>
+                <p><strong>Example:</strong> Heavy bids, almost no asks for 20+ pips above</p>
+                <p><strong>Trading Strategy:</strong> Price can move very fast through vacuum zones. Good for breakout trades but high slippage risk.</p>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ Forex Order Book Limitations</h4>
+                <p>Unlike futures markets with centralized order books, Forex is decentralized:</p>
+                <ul>
+                    <li>ECN/STP brokers show aggregated liquidity from multiple providers</li>
+                    <li>Not all liquidity is visible (dark pools, internal matching)</li>
+                    <li>Large institutional orders often hidden (icebergs)</li>
+                    <li><strong>Solution:</strong> Focus on reputable ECN brokers and combine with other order flow tools</li>
+                </ul>
+            </div>
+            
+            <h3>Tools for Order Book Analysis</h3>
+            <ul>
+                <li><strong>Bookmap:</strong> Visual heatmap of order book depth and changes over time</li>
+                <li><strong>Sierra Chart:</strong> Advanced DOM with market depth visualization</li>
+                <li><strong>NinjaTrader:</strong> DOM + Level II data integration</li>
+                <li><strong>TradingView:</strong> Limited DOM but good for visualization</li>
+                <li><strong>Quantower:</strong> Professional-grade order flow platform</li>
+            </ul>
+        </div>
+
+        <!-- FOOTPRINT CHARTS SECTION -->
+        <div id="footprint" class="content-section">
+            <h2>Footprint Charts (Advanced Order Flow Visualization)</h2>
+            
+            <div class="concept-box">
+                <h3>What are Footprint Charts?</h3>
+                <p>Footprint charts display <strong>bid and ask volume at every price level within each candle</strong>. They show you exactly where aggressive buyers and sellers traded, revealing the internal structure of price action.</p>
+            </div>
+            
+            <h3>Footprint Chart Anatomy</h3>
+            <div class="visual-demo">
+                <h4>Sample Footprint Candle Breakdown</h4>
+                <div class="footprint-chart">
+                    <div class="footprint-cell" style="font-weight: bold; background: rgba(0, 212, 255, 0.3);">Price</div>
+                    <div class="footprint-cell" style="font-weight: bold; background: rgba(0, 212, 255, 0.3);">Bid Vol</div>
+                    <div class="footprint-cell" style="font-weight: bold; background: rgba(0, 212, 255, 0.3);">Ask Vol</div>
+                    <div class="footprint-cell" style="font-weight: bold; background: rgba(0, 212, 255, 0.3);">Delta</div>
+                    <div class="footprint-cell" style="font-weight: bold; background: rgba(0, 212, 255, 0.3);">Imbalance</div>
+                    
+                    <div class="footprint-cell">1.0855</div>
+                    <div class="footprint-cell bearish">850</div>
+                    <div class="footprint-cell">320</div>
+                    <div class="footprint-cell bearish">-530</div>
+                    <div class="footprint-cell bearish">Sell</div>
+                    
+                    <div class="footprint-cell">1.0854</div>
+                    <div class="footprint-cell bearish">1,240</div>
+                    <div class="footprint-cell">480</div>
+                    <div class="footprint-cell bearish">-760</div>
+                    <div class="footprint-cell bearish">Sell</div>
+                    
+                    <div class="footprint-cell">1.0853</div>
+                    <div class="footprint-cell bearish">2,100</div>
+                    <div class="footprint-cell">890</div>
+                    <div class="footprint-cell bearish">-1,210</div>
+                    <div class="footprint-cell bearish"><strong>SELL!</strong></div>
+                    
+                    <div class="footprint-cell">1.0852</div>
+                    <div class="footprint-cell">1,680</div>
+                    <div class="footprint-cell bullish">1,720</div>
+                    <div class="footprint-cell bullish">+40</div>
+                    <div class="footprint-cell neutral">Balance</div>
+                    
+                    <div class="footprint-cell">1.0851</div>
+                    <div class="footprint-cell">920</div>
+                    <div class="footprint-cell bullish">2,450</div>
+                    <div class="footprint-cell bullish">+1,530</div>
+                    <div class="footprint-cell bullish"><strong>BUY!</strong></div>
+                    
+                    <div class="footprint-cell">1.0850</div>
+                    <div class="footprint-cell">540</div>
+                    <div class="footprint-cell bullish">1,890</div>
+                    <div class="footprint-cell bullish">+1,350</div>
+                    <div class="footprint-cell bullish">Buy</div>
+                </div>
+                
+                <p style="margin-top: 20px;"><strong>Analysis:</strong> This shows a rejection pattern:</p>
+                <ul>
+                    <li>Heavy selling at 1.0853-1.0855 (red, negative delta)</li>
+                    <li>Strong buying response at 1.0850-1.0851 (green, positive delta)</li>
+                    <li><strong>Trade Setup:</strong> Long entry at 1.0851, stop below 1.0849, target retest of 1.0855</li>
+                </ul>
+            </div>
+            
+            <h3>Key Footprint Patterns</h3>
+            
+            <div class="strategy-card">
+                <h4>1. Volume Absorption (Most Powerful Pattern)</h4>
+                <p><strong>Description:</strong> High volume traded at a level with minimal price movement</p>
+                <p><strong>What it Means:</strong> Institutional player is absorbing aggressive orders</p>
+                
+                <div class="example-box">
+                    <h4>Bullish Absorption Example</h4>
+                    <p>Price at 1.0850:</p>
+                    <ul>
+                        <li>1.0850: 5,000 bid volume vs 4,800 ask volume</li>
+                        <li>1.0849: 8,200 bid volume vs 450 ask volume ← <strong>KEY LEVEL</strong></li>
+                        <li>1.0848: 2,100 bid volume vs 380 ask volume</li>
+                    </ul>
+                    <p><strong>Analysis:</strong> At 1.0849, massive selling was absorbed by buyers (8,200 vs 450). Price didn't fall further = bullish!</p>
+                    <p><strong>Trade:</strong> Long at 1.0850, stop at 1.0847 (below absorption), target 1.0860+</p>
+                </div>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>2. Point of Control (POC) Exhaustion</h4>
+                <p><strong>Setup:</strong> Highest volume level shows extreme delta divergence</p>
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>Price rallies to 1.0865</li>
+                    <li>POC at 1.0865 shows: 12,000 bid volume vs 15,500 ask volume</li>
+                    <li>More selling than buying at the high = exhaustion</li>
+                </ul>
+                <p><strong>Trade:</strong> Short from 1.0865-1.0866 zone, stop above 1.0870</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>3. Stacked Imbalances</h4>
+                <p><strong>Setup:</strong> 3+ consecutive price levels showing same-side dominance</p>
+                <p><strong>Example - Bullish Stack:</strong></p>
+                <ul>
+                    <li>1.0853: Ask volume 2,800 vs Bid 900 (ratio 3.1:1)</li>
+                    <li>1.0852: Ask volume 3,200 vs Bid 850 (ratio 3.8:1)</li>
+                    <li>1.0851: Ask volume 4,100 vs Bid 1,200 (ratio 3.4:1)</li>
+                </ul>
+                <p><strong>Interpretation:</strong> Strong buying pressure pushing through resistance</p>
+                <p><strong>Trade:</strong> Long on pullback to 1.0851-1.0852, stop below stack</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>4. Delta Divergence</h4>
+                <p><strong>Setup:</strong> Price makes new high/low but cumulative delta doesn't confirm</p>
+                <p><strong>Bearish Divergence Example:</strong></p>
+                <ul>
+                    <li>Price: 1.0850 → 1.0860 → 1.0865 (higher highs)</li>
+                    <li>Cumulative Delta: +2,500 → +1,800 → +900 (declining)</li>
+                </ul>
+                <p><strong>Meaning:</strong> Buying pressure weakening despite higher prices = potential reversal</p>
+                <p><strong>Trade:</strong> Short on bearish confirmation (break below support), stop above recent high</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>5. Single Print Rejection</h4>
+                <p><strong>Setup:</strong> Price level traded only once (one time frame) with extreme delta</p>
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>Price spikes to 1.0870 briefly</li>
+                    <li>1.0870: 180 bid vs 8,500 ask volume</li>
+                    <li>Price immediately rejects back down</li>
+                </ul>
+                <p><strong>Meaning:</strong> Stop hunt or institutional order fill - strong resistance</p>
+                <p><strong>Trade:</strong> Short if price returns to 1.0870, tight stop at 1.0872</p>
+            </div>
+            
+            <h3>Color-Coded Footprint Interpretation</h3>
+            <div class="visual-demo">
+                <h4>Delta Color Schemes (Common in Trading Platforms)</h4>
+                <div class="heatmap">
+                    <div class="heatmap-cell" style="background: #00ff00;">+3000</div>
+                    <div class="heatmap-cell" style="background: #44ff44;">+2000</div>
+                    <div class="heatmap-cell" style="background: #88ff88;">+1000</div>
+                    <div class="heatmap-cell" style="background: #aaffaa;">+500</div>
+                    <div class="heatmap-cell" style="background: #ccffcc;">+200</div>
+                    <div class="heatmap-cell" style="background: #ffcccc;">-200</div>
+                    <div class="heatmap-cell" style="background: #ffaaaa;">-500</div>
+                    <div class="heatmap-cell" style="background: #ff8888;">-1000</div>
+                    <div class="heatmap-cell" style="background: #ff4444;">-2000</div>
+                    <div class="heatmap-cell" style="background: #ff0000;">-3000</div>
+                </div>
+                <p style="margin-top: 15px;"><strong>Reading the Heatmap:</strong></p>
+                <ul>
+                    <li><strong>Bright Green:</strong> Strong buying (aggressive ask orders)</li>
+                    <li><strong>Bright Red:</strong> Strong selling (aggressive bid orders)</li>
+                    <li><strong>Light colors:</strong> Balanced or low activity</li>
+                    <li><strong>Clusters:</strong> Look for color clusters to identify institutional zones</li>
+                </ul>
+            </div>
+            
+            <h3>Advanced Footprint Techniques</h3>
+            
+            <div class="example-box">
+                <h4>The "Hidden" Institutional Entry</h4>
+                <p><strong>Scenario:</strong> Market appears bearish but institutions are accumulating</p>
+                <ol>
+                    <li>Price declining from 1.0870 to 1.0855</li>
+                    <li>Most candles show negative delta (bearish)</li>
+                    <li>BUT: At 1.0855-1.0857, notice:
+                        <ul>
+                            <li>High total volume (3x average)</li>
+                            <li>Positive delta despite price not moving up</li>
+                            <li>Repeated fills at same levels (absorption)</li>
+                        </ul>
+                    </li>
+                    <li><strong>What's happening:</strong> Smart money absorbing retail selling</li>
+                    <li><strong>Trade:</strong> Long at 1.0856-1.0857, stop at 1.0853, target 1.0870+</li>
+                </ol>
+            </div>
+            
+            <div class="warning-box">
+                <h4>⚠️ Common Footprint Mistakes</h4>
+                <ul>
+                    <li><strong>Mistake 1:</strong> Trading every imbalance → Only trade significant ones (2:1+ ratio)</li>
+                    <li><strong>Mistake 2:</strong> Ignoring context → Imbalances mean different things in different market conditions</li>
+                    <li><strong>Mistake 3:</strong> Not waiting for confirmation → Let price prove the level before entering</li>
+                    <li><strong>Mistake 4:</strong> Using wrong timeframe → Match footprint timeframe to your trading style</li>
+                    <li><strong>Mistake 5:</strong> Overtrading → Footprints work best at key technical levels</li>
+                </ul>
+            </div>
+            
+            <h3>Footprint Chart Settings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Trading Style</th>
+                        <th>Recommended Timeframe</th>
+                        <th>Focus Areas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Scalping</td>
+                        <td>1-min to 5-min</td>
+                        <td>Immediate imbalances, absorption at S/R</td>
+                    </tr>
+                    <tr>
+                        <td>Day Trading</td>
+                        <td>5-min to 15-min</td>
+                        <td>POC exhaustion, stacked imbalances</td>
+                    </tr>
+                    <tr>
+                        <td>Swing Trading</td>
+                        <td>15-min to 1-hour</td>
+                        <td>Major delta divergences, accumulation zones</td>
+                    </tr>
+                    <tr>
+                        <td>Position Trading</td>
+                        <td>1-hour to 4-hour</td>
+                        <td>Long-term absorption, institutional zones</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Best Footprint Chart Platforms</h3>
+            <ul>
+                <li><strong>Sierra Chart:</strong> Most comprehensive, steep learning curve</li>
+                <li><strong>Volumetrica (ATAS):</strong> User-friendly, excellent visualization</li>
+                <li><strong>NinjaTrader 8:</strong> Good balance of features and usability</li>
+                <li><strong>Quantower:</strong> Professional-grade, multi-asset</li>
+                <li><strong>Jigsaw Trading:</strong> Specialized for order flow, excellent tape reading</li>
+            </ul>
+        </div>
+
+        <!-- VOLUME PROFILE SECTION -->
+        <div id="volume" class="content-section">
+            <h2>Volume Profile Analysis</h2>
+            
+            <div class="concept-box">
+                <h3>What is Volume Profile?</h3>
+                <p>Volume Profile displays the <strong>distribution of traded volume across different price levels</strong> over a specified time period. Unlike traditional volume indicators that show volume over time, Volume Profile shows volume over price.</p>
+            </div>
+            
+            <h3>Key Volume Profile Components</h3>
+            
+            <div class="visual-demo">
+                <h4>Volume Profile Structure</h4>
+                <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 20px; margin: 20px 0;">
+                    <div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px;">
+                            <p><strong>Price Levels (Vertical Axis)</strong></p>
+                            <div style="margin: 10px 0;">
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,68,68,0.2); border-left: 3px solid #ff4444;">
+                                    1.0865 ← High Volume Node (HVN)
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,255,255,0.05);">
+                                    1.0864
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,255,255,0.05);">
+                                    1.0863
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,215,0,0.2); border-left: 3px solid #ffd700;">
+                                    1.0862 ← Point of Control (POC)
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,255,255,0.05);">
+                                    1.0861
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(0,255,136,0.2); border-left: 3px solid #00ff88;">
+                                    1.0860 ← Low Volume Node (LVN)
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,255,255,0.05);">
+                                    1.0859
+                                </div>
+                                <div style="padding: 8px; margin: 3px 0; background: rgba(255,68,68,0.2); border-left: 3px solid #ff4444;">
+                                    1.0858 ← HVN
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: rgba(0,212,255,0.1); padding: 15px; border-radius: 8px;">
+                        <p><strong>Legend</strong></p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0; padding: 8px; background: rgba(255,215,0,0.2); border-left: 3px solid #ffd700;">
+                                <strong>POC:</strong> Highest volume
+                            </li>
+                            <li style="margin: 10px 0; padding: 8px; background: rgba(255,68,68,0.2); border-left: 3px solid #ff4444;">
+                                <strong>HVN:</strong> High activity
+                            </li>
+                            <li style="margin: 10px 0; padding: 8px; background: rgba(0,255,136,0.2); border-left: 3px solid #00ff88;">
+                                <strong>LVN:</strong> Low activity
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Critical Volume Profile Concepts</h3>
+            
+            <div class="key-point">
+                <strong>1. Point of Control (POC)</strong>
+                <p>The price level with the highest traded volume in the profile. This represents the "fair price" where most participants agreed to trade.</p>
+                <ul>
+                    <li><strong>Magnetic Effect:</strong> Price tends to gravitate toward POC</li>
+                    <li><strong>Support/Resistance:</strong> POC acts as strong S/R when price returns</li>
+                    <li><strong>Break & Retest:</strong> POC breaks often lead to strong moves</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <strong>2. Value Area (VA)</strong>
+                <p>Price range where 70% of volume traded (often shown as shaded region).</p>
+                <ul>
+                    <li><strong>VAH (Value Area High):</strong> Upper boundary - acts as resistance</li>
+                    <li><strong>VAL (Value Area Low):</strong> Lower boundary - acts as support</li>
+                    <li><strong>Trading Strategy:</strong> Fade extremes (short VAH, long VAL), break VA for trends</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <strong>3. High Volume Nodes (HVN)</strong>
+                <p>Price levels with significantly higher volume than surrounding areas.</p>
+                <ul>
+                    <li><strong>Characteristics:</strong> Consolidation zones, fair price acceptance</li>
+                    <li><strong>Trading Implication:</strong> Strong support/resistance, expect rotation</li>
+                    <li><strong>Breakout Trades:</strong> HVN breaks can be explosive (position stops accumulate)</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <strong>4. Low Volume Nodes (LVN)</strong>
+                <p>Price levels with minimal volume - "rejection zones".</p>
+                <ul>
+                    <li><strong>Characteristics:</strong> Fast price movement, unfair pricing</li>
+                    <li><strong>Trading Implication:</strong> Weak support/resistance, price moves through quickly</li>
+                    <li><strong>Gap Fill:</strong> LVN gaps tend to get filled eventually</li>
+                </ul>
+            </div>
+            
+            <h3>Volume Profile Trading Strategies</h3>
+            
+            <div class="strategy-card">
+                <h4>Strategy 1: POC Magnet Trade</h4>
+                <p><strong>Setup:</strong> Price moves away from POC creating imbalance</p>
+                <p><strong>Entry Rules:</strong></p>
+                <ol>
+                    <li>Identify current session POC (example: 1.0860)</li>
+                    <li>Price moves to 1.0875 (15 pips away from POC)</li>
+                    <li>Look for reversal signs (bearish footprint, absorption)</li>
+                    <li>Enter short targeting return to POC</li>
+                </ol>
+                <p><strong>Risk Management:</strong></p>
+                <ul>
+                    <li>Stop: Above recent swing high (1.0878)</li>
+                    <li>Target 1: POC (1.0860)</li>
+                    <li>Target 2: VAL if momentum continues</li>
+                    <li>Risk:Reward typically 1:2 or better</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>Strategy 2: Value Area Breakout</h4>
+                <p><strong>Setup:</strong> Price consolidates within Value Area then breaks out</p>
+                <p><strong>Bullish Example:</strong></p>
+                <ol>
+                    <li>Value Area: 1.0855-1.0865, POC at 1.0860</li>
+                    <li>Price consolidates for 2+ hours within VA</li>
+                    <li>Volume decreasing during consolidation</li>
+                    <li>Strong breakout above VAH (1.0865) with increasing volume</li>
+                    <li>Enter long on breakout or pullback to VAH</li>
+                </ol>
+                <p><strong>Confirmation Signals:</strong></p>
+                <ul>
+                    <li>Footprint shows buying imbalance at VAH</li>
+                    <li>POC absorption occurred during consolidation</li>
+                    <li>Order book thin above VAH (vacuum)</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>Strategy 3: LVN Gap Fill</h4>
+                <p><strong>Setup:</strong> Price quickly moved through area creating LVN gap</p>
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>Price rallied from 1.0840 to 1.0870 rapidly</li>
+                    <li>LVN created at 1.0850-1.0855 (minimal volume traded)</li>
+                    <li>Price now at 1.0870 showing exhaustion</li>
+                </ul>
+                <p><strong>Trade:</strong></p>
+                <ul>
+                    <li>Short from 1.0870 targeting LVN fill at 1.0850-1.0855</li>
+                    <li>LVNs offer little support, allowing fast moves</li>
+                    <li>Exit when price reaches HVN below gap</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>Strategy 4: HVN Support/Resistance</h4>
+                <p><strong>Setup:</strong> Price approaches significant HVN from previous session/period</p>
+                <p><strong>Bullish Example:</strong></p>
+                <ol>
+                    <li>Previous day's HVN at 1.0845 (heavy volume)</li>
+                    <li>Current price falling toward 1.0845</li>
+                    <li>Watch footprint as price reaches HVN</li>
+                    <li>If absorption occurs (buying > selling), go long</li>
+                    <li>Stop below HVN (1.0842)</li>
+                    <li>Target: Next HVN or VAH</li>
+                </ol>
+            </div>
+            
+            <h3>Types of Volume Profiles</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Profile Type</th>
+                        <th>Description</th>
+                        <th>Best Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Session Profile</strong></td>
+                        <td>Volume for single trading session (e.g., London, NY)</td>
+                        <td>Intraday trading, day trading strategies</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daily Profile</strong></td>
+                        <td>Volume for entire 24-hour period</td>
+                        <td>Swing trading, identifying daily S/R</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weekly/Monthly Profile</strong></td>
+                        <td>Volume aggregated over longer periods</td>
+                        <td>Position trading, major S/R zones</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Composite Profile</strong></td>
+                        <td>Multiple sessions combined</td>
+                        <td>Understanding longer-term value areas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TPO (Time Price Opportunity)</strong></td>
+                        <td>Market Profile using time instead of volume</td>
+                        <td>Understanding price acceptance over time</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="example-box">
+                <h4>Real-World Volume Profile Scenario</h4>
+                <p><strong>EUR/USD - London Session Analysis</strong></p>
+                <p><strong>Profile Data:</strong></p>
+                <ul>
+                    <li>POC: 1.0858</li>
+                    <li>VAH: 1.0865</li>
+                    <li>VAL: 1.0851</li>
+                    <li>HVN at: 1.0858, 1.0862</li>
+                    <li>LVN at: 1.0855</li>
+                </ul>
+                
+                <p><strong>Market Setup (10:00 AM London):</strong></p>
+                <ul>
+                    <li>Price currently at 1.0864 (near VAH)</li>
+                    <li>Footprint shows absorption at 1.0862 HVN</li>
+                    <li>Order book thin above 1.0865</li>
+                    <li>Positive delta building</li>
+                </ul>
+                
+                <p><strong>Trade Decision:</strong></p>
+                <ol>
+                    <li><strong>Entry:</strong> Long at 1.0865 breakout</li>
+                    <li><strong>Reasoning:</strong> HVN held, VAH breakout with momentum, thin order book above</li>
+                    <li><strong>Stop:</strong> 1.0861 (below HVN and POC)</li>
+                    <li><strong>Target 1:</strong> 1.0875 (previous day's VAH)</li>
+                    <li><strong>Target 2:</strong> 1.0880 (next major HVN)</li>
+                    <li><strong>Result:</strong> 4pip risk for 10-15pip reward = 1:2.5 to 1:3.75 R:R</li>
+                </ol>
+            </div>
+            
+            <h3>Volume Profile + Footprint Combination</h3>
+            
+            <div class="concept-box">
+                <h3>The Power of Combining Tools</h3>
+                <p>Volume Profile identifies WHERE to trade, Footprint Charts show you WHEN to trade:</p>
+                <ol>
+                    <li><strong>Volume Profile:</strong> Identify POC, VAH, VAL, HVNs</li>
+                    <li><strong>Wait for Price:</strong> Price approaches key VP level</li>
+                    <li><strong>Footprint Confirmation:</strong> Look for absorption, imbalances</li>
+                    <li><strong>Order Book:</strong> Check for large orders (walls, icebergs)</li>
+                    <li><strong>Execute:</strong> Enter with confluence of all signals</li>
+                </ol>
+            </div>
+            
+            <h3>Volume Profile Tools & Platforms</h3>
+            <ul>
+                <li><strong>TradingView:</strong> Fixed Range Volume Profile (free), Volume Profile indicator</li>
+                <li><strong>Sierra Chart:</strong> Most comprehensive VP tools, TPO charts</li>
+                <li><strong>NinjaTrader:</strong> Market Profile add-ons, good visualization</li>
+                <li><strong>ThinkOrSwim:</strong> Built-in TPO and Volume Profile</li>
+                <li><strong>MotiveWave:</strong> Professional Market Profile software</li>
+            </ul>
+        </div>
+
+        <!-- LIQUIDITY ANALYSIS SECTION -->
+        <div id="liquidity" class="content-section">
+            <h2>Liquidity Analysis & Smart Money Concepts</h2>
+            
+            <div class="concept-box">
+                <h3>Understanding Liquidity in Forex</h3>
+                <p>Liquidity in forex refers to <strong>pending orders (stop losses and limit orders)</strong> clustered at specific price levels. Institutions need liquidity to fill their large orders. Understanding where liquidity sits and how it's hunted is crucial for order flow trading.</p>
+            </div>
+            
+            <h3>Types of Liquidity</h3>
+            
+            <div class="key-point">
+                <strong>1. Buy-Side Liquidity (BSL)</strong>
+                <p>Stop-loss orders from shorts + breakout buy-stop orders above resistance</p>
+                <ul>
+                    <li>Located: Above swing highs, round numbers, obvious resistance</li>
+                    <li>Appearance: Equal highs, double/triple tops</li>
+                    <li>Purpose: Smart money uses these for shorting entries</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <strong>2. Sell-Side Liquidity (SSL)</strong>
+                <p>Stop-loss orders from longs + breakout sell-stop orders below support</p>
+                <ul>
+                    <li>Located: Below swing lows, round numbers, obvious support</li>
+                    <li>Appearance: Equal lows, double/triple bottoms</li>
+                    <li>Purpose: Smart money uses these for long entries</li>
+                </ul>
+            </div>
+            
+            <div class="key-point">
+                <strong>3. Internal Liquidity</strong>
+                <p>Liquidity within a range (not at extremes)</p>
+                <ul>
+                    <li>Located: At previous POCs, HVNs, gap fills</li>
+                    <li>Purpose: Profit-taking zones, partial fills</li>
+                </ul>
+            </div>
+            
+            <h3>The Liquidity Hunt (Stop Run)</h3>
+            
+            <div class="visual-demo">
+                <h4>Anatomy of a Liquidity Sweep</h4>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px;">
+                    <p><strong>Scenario: Bullish Liquidity Hunt</strong></p>
+                    <ol style="line-height: 2;">
+                        <li><strong>Accumulation:</strong> Smart money builds long positions at 1.0840-1.0845</li>
+                        <li><strong>Price rallies:</strong> Move to 1.0860, retail goes long</li>
+                        <li><strong>Equal lows form:</strong> Support at 1.0845 (SSL pools below)</li>
+                        <li><strong>False breakdown:</strong> Price sweeps to 1.0843, triggering stops</li>
+                        <li><strong>Instant reversal:</strong> Smart money absorbs selling, price rockets</li>
+                        <li><strong>Result:</strong> Retail stopped out, smart money adds to longs at better price</li>
+                    </ol>
+                </div>
+                
+                <div style="margin-top: 20px; padding: 15px; background: rgba(255,136,0,0.1); border-left: 4px solid #ff8800; border-radius: 4px;">
+                    <p><strong>Key Indicators of Liquidity Hunt:</strong></p>
+                    <ul>
+                        <li>Wick through level but candle closes back inside range</li>
+                        <li>High volume at liquidity level (absorption)</li>
+                        <li>Immediate strong reversal</li>
+                        <li>Footprint shows buying domination after sweep</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Smart Money Concepts (SMC) Order Flow</h3>
+            
+            <div class="strategy-card">
+                <h4>1. Order Blocks (OB)</h4>
+                <p><strong>Definition:</strong> The last bullish candle before bearish move (or vice versa) - represents institutional order placement</p>
+                
+                <div class="example-box">
+                    <h4>Bullish Order Block Example</h4>
+                    <p><strong>Formation:</strong></p>
+                    <ul>
+                        <li>Strong bearish move from 1.0870 to 1.0850</li>
+                        <li>Last bullish candle before drop: 1.0868-1.0870</li>
+                        <li>This candle = Bullish Order Block</li>
+                    </ul>
+                    <p><strong>Trading Strategy:</strong></p>
+                    <ul>
+                        <li>When price returns to 1.0868-1.0870, expect support</li>
+                        <li>Look for footprint confirmation (absorption)</li>
+                        <li>Enter long with stop below OB</li>
+                        <li>Target: SSL above (liquidity grab target)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>2. Fair Value Gaps (FVG / Imbalance)</h4>
+                <p><strong>Definition:</strong> Three-candle pattern where middle candle's high doesn't overlap next candle's low (or vice versa)</p>
+                
+                <p><strong>Bullish FVG:</strong></p>
+                <ul>
+                    <li>Candle 1: Low at 1.0850, High at 1.0853</li>
+                    <li>Candle 2: Low at 1.0854, High at 1.0862 ← Big bullish candle</li>
+                    <li>Candle 3: Low at 1.0865, High at 1.0870</li>
+                    <li><strong>Gap:</strong> 1.0853 to 1.0865 = FVG (no trading occurred)</li>
+                </ul>
+                
+                <p><strong>Trading Implication:</strong></p>
+                <ul>
+                    <li>Price tends to return to fill FVG (70-80% of time)</li>
+                    <li>Acts as support/resistance when price returns</li>
+                    <li>Combine with order blocks for high-probability setups</li>
+                </ul>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>3. Break of Structure (BOS) vs Change of Character (CHoCH)</h4>
+                
+                <p><strong>Break of Structure (BOS):</strong></p>
+                <ul>
+                    <li>Price breaks most recent high in uptrend (or low in downtrend)</li>
+                    <li>Confirms trend continuation</li>
+                    <li>Signals: Safe to trade with trend</li>
+                </ul>
+                
+                <p><strong>Change of Character (CHoCH):</strong></p>
+                <ul>
+                    <li>Price breaks counter-trend structure</li>
+                    <li>Uptrend: Breaks below previous higher low</li>
+                    <li>Signals: Potential trend reversal, caution</li>
+                </ul>
+                
+                <p><strong>Order Flow Perspective:</strong></p>
+                <ul>
+                    <li>BOS: Order flow should show continued imbalances in trend direction</li>
+                    <li>CHoCH: Look for delta divergence, absorption suggesting reversal</li>
+                </ul>
+            </div>
+        </div>
+        <script src="order.js"></script>
+    </body>
+</html>
